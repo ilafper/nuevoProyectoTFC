@@ -11,14 +11,11 @@ $(document).ready(function () {
     $('.checklogin').click(async function (e) {
         e.preventDefault();
 
-        let nombre = $('#username').val().trim();
+        let nombre = $('#nombre').val().trim();
         let password = $('#password').val().trim();
-
-        if (!nombre || !password) {
-            alert("Por favor, completa todos los campos.");
-            return;
-        }
-
+        console.log(nombre);
+        console.log(password);
+        
         try {
             const response = await $.ajax({
                 type: 'POST',
