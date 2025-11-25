@@ -8,6 +8,7 @@ function cambiar(formId) {
 }
 
 $(document).ready(function () {
+    //iniciar sesión
     $('.checklogin').click(async function (e) {
         e.preventDefault();
 
@@ -51,14 +52,17 @@ $(document).ready(function () {
             }
         }
     });
-
+    //nuevo usuario
     $('.checkregis').click(async function (e) {
         e.preventDefault();
 
-        const nombre = $('#nameNew').val().trim();
-        const email = $('#emailNew').val().trim();
+        const nombre = $('#nuevo_nombre').val().trim();
+        const email = $('#email_nuevo').val().trim();
         const password1 = $('#contresena1').val();
         const password2 = $('#contrasena2').val();
+
+        console.log("datos a enviar" , { nombre, email, password1, password2 });
+        
 
         if (!nombre || !email || !password1 || !password2) {
             alert("Por favor, completa todos los campos.");
@@ -66,7 +70,8 @@ $(document).ready(function () {
         }
 
         if (password1 !== password2) {
-            alert("Las contraseñas no coinciden.");
+            console.log("no coinciden las contraseñas");
+            
             return;
         }
 
