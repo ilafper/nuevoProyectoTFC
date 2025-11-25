@@ -24,9 +24,23 @@ $(document).ready(function () {
                 data: JSON.stringify({ nombre, password })
             });
             // Guardar datos del usuario en localStorage
+
+            console.log("caracola");
+            console.log(response.usuario.rol);
+            
+            if (response.usuario.rol == "user") {
+                window.location.href = "../html/home.html";
+            }else if (response.usuario.rol == "admin") {
+                window.location.href = "../html/admin.html";
+            }else{
+                console.log("nonononno");
+                
+            }
+
+
             localStorage.setItem('usuario', JSON.stringify(response.usuario));
             //alert(response.mensaje);
-            window.location.href = "../html/home.html";
+            //window.location.href = "../html/home.html";
 
         } catch (error) {
             if (error.status === 401) {
