@@ -406,6 +406,9 @@ body {
 
 /* Pantallas muy pequeñas (menos de 576px) */
 @media (max-width: 576px) {
+  .inicio{
+    width: 100%;
+  }
   .custom-container {
     padding: 15px 12px;
   }
